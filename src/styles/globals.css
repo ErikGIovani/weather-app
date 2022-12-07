@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+[data-theme="light"] {
+  --primary-bg-color: #f3f4f6;
+  --secondary-bg-color: #ffffff;
+  --color: #000000;
+}
+
+[data-theme="dark"] {
+  --primary-bg-color: #121212;
+  --secondary-bg-color: #161616;
+  --color: #ffffff;
+}

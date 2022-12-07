@@ -1,0 +1,170 @@
+.sidebar {
+  width: 33.333333%;
+  height: 100vh;
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+  background-color: var(--secondary-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 3rem 0 3rem;
+}
+
+.form {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  background-color: var(--primary-bg-color);
+  border: none;
+  outline: none;
+  padding: 1rem 3rem;
+  width: 100%;
+  border-radius: 2rem;
+  color: var(--color);
+}
+
+.input:focus {
+  outline: 2px solid blue;
+}
+
+.icon {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+}
+
+.icon svg {
+  font-size: 1rem;
+  color: gray;
+}
+
+.button {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  border-radius: 2rem;
+  padding: 0 1rem;
+}
+
+.button:focus {
+  outline: 2px solid blue;
+}
+
+.button svg {
+  font-size: 1rem;
+  color: var(--color);
+}
+
+@keyframes image {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 10px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
+.image {
+  margin-top: 1rem;
+  width: 14rem;
+  position: relative;
+  animation-name: image;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.weather {
+  width: 100%;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.temp {
+  font-size: 3rem;
+  color: var(--color);
+  font-weight: bold;
+}
+
+.favorite_icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  background-color: transparent;
+  color: var(--color);
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favorite_icon:focus {
+  outline: 2px solid blue;
+}
+
+.country {
+  font-size: 2rem;
+  color: var(--color);
+}
+
+.conteainer_description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.wrapper_description {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.description {
+  font-size: 1rem;
+  color: var(--color);
+  text-transform: capitalize;
+}
+
+.sidebar hr {
+  width: 100%;
+  margin: 1rem 0;
+  color: var(--color);
+}
+
+.container_favorites {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.favorite_item {
+  color: var(--color);
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.favorite_item:focus {
+  color: blue;
+  outline: none;
+}
+
+.favorite_message {
+  color: var(--color);
+}
