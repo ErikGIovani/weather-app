@@ -5,7 +5,8 @@ export default function CountryProvider({ children }) {
   const [countries, setCountries] = useLocalStorage("weather", {
     units: "metric",
     language: "en",
-    country: process.env.NEXT_PUBLIC_COUNTRY,
+    lat: process.env.NEXT_PUBLIC_LAT,
+    lon: process.env.NEXT_PUBLIC_LON,
   });
 
   return (
