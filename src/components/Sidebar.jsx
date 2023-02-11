@@ -61,21 +61,21 @@ export default function Sidebar() {
 
       <img
         className={styles.image}
-        src={`icons/${icons(country?.weather[0].icon)}.png`}
+        src={`icons/${icons(country?.weather?.[0].icon)}.png`}
         alt=""
       />
 
       <div className={styles.weather}>
         <p className={styles.temp}>
-          {`${country?.main.temp.toString().split(".")[0]}°${units}`}
+          {`${country?.main?.temp.toString().split(".")[0]}°${units}`}
         </p>
         <button
           className={styles.favorite_icon}
           onClick={() =>
             toogleFavorite(
               country?.name,
-              country?.coord.lat,
-              country?.coord.lon
+              country?.coord?.lat,
+              country?.coord?.lon
             )
           }
         >

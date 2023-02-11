@@ -89,7 +89,7 @@ export default function useWeather() {
     active,
     location,
     country,
-    countryDays: nextCountry?.list.filter(
+    countryDays: nextCountry?.list?.filter(
       (item) => item.dt_txt.split(" ")[1].split(":")[0] == 12
     ),
     loading,

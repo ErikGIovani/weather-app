@@ -35,7 +35,7 @@ export default function Content() {
         <div className={styles.container_country_description}>
           <p className={styles.container_country_title}>{language.min_temp}</p>
           <p className={styles.container_country_temp}>{`${
-            country?.main.temp_min.toString().split(".")[0]
+            country?.main?.temp_min?.toString().split(".")[0]
           }°${units}`}</p>
           <FaTemperatureLow className={styles.container_country_icon} />
         </div>
@@ -44,14 +44,14 @@ export default function Content() {
           <p className={styles.container_country_title}>{language.humidity}</p>
           <p
             className={styles.container_country_temp}
-          >{`${country?.main.humidity}%`}</p>
+          >{`${country?.main?.humidity}%`}</p>
           <FaTint className={styles.container_country_icon} />
         </div>
 
         <div className={styles.container_country_description}>
           <p className={styles.container_country_title}>{language.max_temp}</p>
           <p className={styles.container_country_temp}>{`${
-            country?.main.temp_max.toString().split(".")[0]
+            country?.main?.temp_max.toString().split(".")[0]
           }°${units}`}</p>
           <FaTemperatureHigh className={styles.container_country_icon} />
         </div>
@@ -65,7 +65,7 @@ export default function Content() {
             </p>
             <img
               className={styles.container_country_days_image}
-              src={`icons/${icons(country?.weather[0].icon)}.png`}
+              src={`icons/${icons(country?.weather?.[0].icon)}.png`}
               alt=""
             />
             <p className={styles.container_country_days_temp}>{`${
