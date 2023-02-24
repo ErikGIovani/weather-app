@@ -1,6 +1,4 @@
 import {
-  FaSearch,
-  FaMapMarkerAlt,
   FaHeart,
   FaRegHeart,
   FaCloud,
@@ -13,51 +11,18 @@ import useLanguages from "@/hooks/useLanguages";
 import useFavoritesCountries from "@/hooks/useFavoritesCountries";
 import useDate from "@/hooks/useDate";
 import icons from "@/utils/icons";
+import Form from "./Form";
 import styles from "./Sidebar.module.css";
-import { useState } from "react";
 
 export default function Sidebar() {
   const { language } = useLanguages();
-  const {
-    country,
-    units,
-    handleCountryClick,
-    handleCountryKey,
-    handleChange,
-    location,
-    clickSearchCountry,
-    active,
-  } = useWeather();
+  const { country, units, handleCountryClick, handleCountryKey } = useWeather();
   const { favorites, favoriteVerify, toogleFavorite } = useFavoritesCountries();
   const { date, hours } = useDate(new Date());
 
   return (
     <aside className={styles.sidebar}>
-      <form className={styles.form}>
-        <div className={styles.icon}>
-          <FaSearch />
-        </div>
-        <input
-          onChange={handleChange}
-          className={styles.input}
-          type="text"
-          placeholder={language.search_message}
-        />
-        <button className={styles.button} type="submit">
-          <FaMapMarkerAlt />
-        </button>
-        {active && location?.length > 0 ? (
-          <div className={styles.search_suggestions}>
-            {location?.map((item, index) => (
-              <p
-                tabindex="0"
-                onClick={() => clickSearchCountry(item.lat, item.lon)}
-                key={index}
-              >{`${item.name}, ${item.country}`}</p>
-            ))}
-          </div>
-        ) : null}
-      </form>
+      <Form />
 
       <img
         className={styles.image}
