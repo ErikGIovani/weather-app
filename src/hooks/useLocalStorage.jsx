@@ -7,6 +7,9 @@ export default function useLocalStorage(key, initialValue) {
     }
 
     try {
+      if(window.localStorage.getItem("weather")){
+        window.localStorage.removeItem("weather");
+      }
       const item = window.localStorage.getItem(key);
       return item ? JSON.parse(item) : initialValue;
     } catch (error) {
