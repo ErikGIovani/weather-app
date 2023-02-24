@@ -49,6 +49,10 @@ export default function useWeather() {
   };
 
   const handleChange = (e) => {
+  if(e.target.value.lenght === 0){
+    setActive(false);
+    return
+  }
     fetch(
       `http://api.openweathermap.org/geo/1.0/direct?appid=${
         process.env.NEXT_PUBLIC_API_KEY
