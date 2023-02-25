@@ -54,7 +54,7 @@ export default function useWeather() {
     return
   }
     fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?appid=${
+      `https://api.openweathermap.org/geo/1.0/direct?appid=${
         process.env.NEXT_PUBLIC_API_KEY
       }&q=${e.target.value.toLowerCase()}&limit=10`
     )
