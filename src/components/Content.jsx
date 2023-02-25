@@ -1,36 +1,21 @@
-import {
-  FaSun,
-  FaMoon,
-  FaTemperatureHigh,
-  FaTemperatureLow,
-  FaTint,
-} from "react-icons/fa";
+import { FaTemperatureHigh, FaTemperatureLow, FaTint } from "react-icons/fa";
 
-import useDarkMode from "@/hooks/useDarkMode";
 import useWeather from "@/hooks/useWeather";
 import useLanguages from "@/hooks/useLanguages";
 import icons from "@/utils/icons";
 import styles from "./Content.module.css";
 import useDate from "@/hooks/useDate";
+import Header from "./Header";
 
 export default function Content() {
-  const { mode, toggleMode } = useDarkMode();
-  const { invertedUnits, toggleUnits, countryDays, country, units } =
-    useWeather();
-  const { invertLanguage, languageToggle, language } = useLanguages();
+  const { countryDays, country, units } = useWeather();
+  const { language } = useLanguages();
   const { dayFunc } = useDate();
 
   return (
-    <section className={styles.section}>
-      <header className={styles.header}>
-        <h1>Weather App</h1>
-        <nav className={styles.nav}>
-          <button onClick={toggleUnits}>{`°${invertedUnits}`}</button>
-          <button onClick={languageToggle}>{invertLanguage}</button>
-          <button onClick={toggleMode}>{mode ? <FaSun /> : <FaMoon />}</button>
-        </nav>
-      </header>
-
+    <>
+      <Header />
+      <div className={styles.main}>
       <div className={styles.wrapper_country_description}>
         <div className={styles.container_country_description}>
           <p className={styles.container_country_title}>{language.min_temp}</p>
@@ -74,6 +59,7 @@ export default function Content() {
           </div>
         ))}
       </div>
-    </section>
+      </div>
+    </>
   );
 }

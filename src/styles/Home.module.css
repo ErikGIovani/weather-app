@@ -1,6 +1,27 @@
 .main {
   width: 100%;
   height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "aside   nav    nav    nav"
+    "aside   main   main   main"
+    "aside   main   main   main";
   background-color: var(--primary-bg-color);
+  overflow: hidden;
+}
+
+@media (max-width: 1200px) {
+  .main {
+    width: 100vw;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas:
+      "nav"
+      "aside"
+      "main";
+  }
 }
