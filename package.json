@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cypress:open": "cypress open"
   },
   "dependencies": {
     "eslint": "8.29.0",
@@ -16,5 +17,9 @@
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
     "swr": "^2.0.3"
+  },
+  "devDependencies": {
+    "@testing-library/cypress": "^9.0.0",
+    "cypress": "^12.7.0"
   }
 }
